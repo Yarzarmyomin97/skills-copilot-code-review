@@ -60,7 +60,7 @@ jobs:
         env:
           REVIEWER_LOGIN: ${{ github.event.requested_reviewer.login }}
         run: |
-          if [[ "${REVIEWER_LOGIN,,}" == "YarzarMyoMin" ]]; then
+          if [[ "${REVIEWER_LOGIN,,}" == "copilot" ]]; then
             echo "Copilot is assigned as reviewer."
           else
             echo "Copilot is NOT assigned as reviewer."
