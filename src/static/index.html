@@ -12,9 +12,7 @@
     />
   </head>
   <body>
-    <div class="announcement-banner">
-  📢 Activity registration is open until the end of the month. Don't lose your spot!
-</div>
+    <div id="announcement-banner" class="announcement-banner hidden"></div>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -29,6 +27,9 @@
             <button id="logout-button">Logout</button>
           </div>
         </div>
+        <button id="announcements-button" class="secondary-button hidden">
+          Manage Announcements
+        </button>
       </div>
     </header>
 
@@ -134,6 +135,52 @@
           <button type="submit">Login</button>
         </form>
         <div id="login-message" class="hidden message"></div>
+      </div>
+    </div>
+
+    <div id="announcement-manager-modal" class="modal hidden">
+      <div class="modal-content announcement-modal">
+        <span class="close-announcement-modal">&times;</span>
+        <div class="announcement-manager-header">
+          <div>
+            <h3>Announcements</h3>
+            <p>Manage the banner messages displayed to all visitors.</p>
+          </div>
+          <button id="create-announcement-button" class="ghost-button">
+            + New Announcement
+          </button>
+        </div>
+
+        <div id="announcement-list" class="announcement-list"></div>
+
+        <div id="announcement-form-container" class="announcement-form-container hidden">
+          <h4 id="announcement-form-title">New Announcement</h4>
+          <form id="announcement-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="announcement-title">Title (optional)</label>
+                <input type="text" id="announcement-title" maxlength="120" placeholder="Short headline" />
+              </div>
+              <div class="form-group">
+                <label for="announcement-message">Message</label>
+                <textarea id="announcement-message" rows="4" required placeholder="Write your announcement message."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="announcement-start-date">Start Date (optional)</label>
+                <input type="date" id="announcement-start-date" />
+              </div>
+              <div class="form-group">
+                <label for="announcement-expiration-date">Expiration Date</label>
+                <input type="date" id="announcement-expiration-date" required />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button id="save-announcement-button" type="submit">Save Announcement</button>
+              <button id="cancel-announcement-button" type="button" class="cancel-btn">Cancel</button>
+            </div>
+            <div id="announcement-form-message" class="hidden message"></div>
+          </form>
+        </div>
       </div>
     </div>
 
